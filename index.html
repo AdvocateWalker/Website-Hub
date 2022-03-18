@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Oakland Opportunities</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/s3Slider.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#slider1').s3Slider({
+        timeOut: 5000
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".pane-list li").click(function () {
+        window.location = $(this).find("a").attr("href");
+        return false;
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.rss').append('<span class="hover"></span>').each(function () {
+        var $span = $('> span.hover', this).css('opacity', 0);
+        $(this).hover(function () {
+            $span.stop().fadeTo(500, 1);
+        }, function () {
+            $span.stop().fadeTo(500, 0);
+        });
+    });
+    $('.facebook').append('<span class="hover"></span>').each(function () {
+        var $span = $('> span.hover', this).css('opacity', 0);
+        $(this).hover(function () {
+            $span.stop().fadeTo(500, 1);
+        }, function () {
+            $span.stop().fadeTo(500, 0);
+        });
+    });
+    $('.twitter').append('<span class="hover"></span>').each(function () {
+        var $span = $('> span.hover', this).css('opacity', 0);
+        $(this).hover(function () {
+            $span.stop().fadeTo(500, 1);
+        }, function () {
+            $span.stop().fadeTo(500, 0);
+        });
+    });
+});
+</script>
+</head>
+<body>
+<div id="container">
+  <div id="nav">
+    <div id="logo"><a href="index.html"><img src="images\Oakland Oppurtunities Logo (002).png" width="242" height="85" alt="Oakland Oppertunities" /></a></div>
+    <ul>
+      <li><a href="index.html">Home</a><span class="nav_text">Welcome to our site</span></li>
+      <li><a href="https://www.oakgov.com/parks/Pages/jobs.aspx" target= "_blank">Oakland</a><span class="nav_text">See Jobs</span></li>
+      <li><a href="blog.html">Location</a><span class="nav_text">The location of the event</span></li>
+      <li><a href="page.html">Contact Us</a><span class="nav_text">Get in touch</span></li>
+    </ul>
+  </div>
+  <!-- close nav -->
+  <div id="slider1">
+    <ul id="slider1Content">
+      <li class=""> <iframe width="560" height="315" src="https://www.youtube.com/embed/anBiU98mrqQ" title="YouTube video player" frameborder="50%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" control allowfullscreen ></iframe><span class="right">
+  </div>
+  <!-- end slider -->
+  <div id="left">
+    <h1 class="main_heading">OakLand Your Future!</h1>
+    <h2>Welcome to Oakland Opportunities</h2>
+    <br>
+    <p>We will be hosting a Job Fair as well as activities anyone can play. we hope you can join us. Below you can find the activities we will be hosting</p>
+    <p<div class="feature-info">
+      <h4>Bounce House</h4>
+      <p class="feature-description">If the weather permits, we will have a bouncy house race course, provided by Oakland Community Parks.</p>
+      <h4>Archery</h4>
+      <p class="feature-description">There will be Archery inside the grand hall. Safety measures and equipment provided by Oakland County Parks.</p>
+      <h4>RC Cars</h4>
+      <p class="feature-description"> We will set up a RC car course for participants to compete in a race. </p>
+      <h4> Resume Editing/Interviews </h4>
+      <p class="feature-description"> We've set up a station for anyone to review and edit their resumes, as well as interview for jobs at Oakland Parks .</p>
+      <h4>Indoor Yard Games</h4>
+      <p class="feature-description">Cornhole, Giant Chess, Spike Ball</p>
+    </div>
+    </div>
+  </div>
+</div>
+<div id="right">
+  <h2>Available Jobs</h2>
+  <br>
+  <h4>Archery Facilitator</h4>
+      <p class="feature-description"> 1</p>
+      <h4>Concession Cook</h4>
+      <p class="feature-description">1</p>
+      <h4>Parks Seasonal Laborer</h4>
+      <p class="feature-description">1</p>
+      <h4>Concession Worker</h4>
+      <p class="feature-description">1</p>
+    </div>
+    <div id="right">
+      <h4><a href="https://www.governmentjobs.com/careers/oakgov?department%5b0%5d=Parks%20and%20Recreation&sort=PositionTitle%7cAscending" target="_blank">To Job Listing</a></h4>
+      <!-- <div id="">
+        <ul>
+          <li><a href="https://www.governmentjobs.com/careers/oakgov?department%5b0%5d=Parks%20and%20Recreation&sort=PositionTitle%7cAscending" style= padding 400px>See More</a></li> -->
+          <!-- <li><a href="#">Morbi luctus</a></li>
+          <li><a href="#">Mauris pulvinar porta</a></li>
+          <li><a href="#">Praesent commodo</a></li> -->
+        </ul>
+      </div>
+<div id="footer">
+   <p></p>Maintained by Dæmon, Jeremy, and Tyler at iTEAM Corporation.</p>
+ Template by: <a href="http://www.csstemplateheaven.com">CssTemplateHeaven</a>
+  <!-- <div id="sharethis">
+    <ul>
+      <li><a href="#" class="twitter"><span>Twitter</span></a></li>
+      <li><a href="#" class="facebook"><span>Facebook</span></a></li>
+      <li><a href="#" class="rss"><span>RSS feed</span></a></li>
+    </ul>
+  </div> -->
+</div>
+</body>
+</html>
