@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Advocate Network (ADV) — Terms of Service</title>
+  <meta name="description" content="Advocate Network (ADV) Discord bot Terms of Service." />
+  <style>
+    :root{
+      --bg: #0b0f1a;
+      --panel: rgba(255,255,255,.06);
+      --panel-2: rgba(255,255,255,.04);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.55);
+      --border: rgba(255,255,255,.12);
+      --accent: #7c3aed;
+      --accent-2: #22c55e;
+      --warn: #f59e0b;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb;
+        --panel: rgba(0,0,0,.04);
+        --panel-2: rgba(0,0,0,.03);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.66);
+        --faint: rgba(0,0,0,.52);
+        --border: rgba(0,0,0,.10);
+        --shadow: 0 18px 50px rgba(0,0,0,.10);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(124,58,237,.25), transparent 55%),
+        radial-gradient(900px 500px at 95% 10%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 700px at 50% 110%, rgba(245,158,11,.10), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+    header{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      padding: 24px 22px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    header:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(800px 300px at 20% 10%, rgba(124,58,237,.28), transparent 60%),
+                  radial-gradient(600px 260px at 80% 0%, rgba(34,197,94,.18), transparent 60%);
+      pointer-events:none;
+      filter: blur(0.5px);
+    }
+    header > *{position:relative}
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .badge{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.2px;
+      color: var(--muted);
+    }
+    h1{
+      margin:0;
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing: -0.02em;
+      line-height:1.15;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      max-width: 68ch;
+    }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+    button, .btn{
+      appearance:none;
+      border:1px solid var(--border);
+      background: var(--panel-2);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 600;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: transform .06s ease, background .2s ease, border-color .2s ease;
+      text-decoration:none;
+      user-select:none;
+    }
+    button:hover, .btn:hover{background: var(--panel)}
+    button:active, .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: rgba(124,58,237,.18);
+      border-color: rgba(124,58,237,.35);
+    }
+    .btn-primary:hover{background: rgba(124,58,237,.24)}
+    .hint{
+      font-size: 13px;
+      color: var(--faint);
+      margin-top: 6px;
+    }
+    main{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .panel{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel-inner{
+      padding: 18px 18px 8px;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      padding: 14px 18px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta strong{color: var(--text)}
+    nav{
+      border-top:1px solid var(--border);
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.03));
+      padding: 14px 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+    }
+    .chip{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration:none;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .chip:hover{
+      background: rgba(124,58,237,.14);
+      border-color: rgba(124,58,237,.28);
+      color: var(--text);
+    }
+
+    section{
+      padding: 4px 0 16px;
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+    }
+    section:first-of-type{border-top:none;margin-top:0}
+    h2{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      max-width: 85ch;
+    }
+    ul{
+      margin: 8px 0 10px 20px;
+      color: var(--muted);
+      max-width: 85ch;
+    }
+    li{margin: 4px 0}
+    .summary{
+      border-top:1px dashed var(--border);
+      margin-top: 16px;
+      padding-top: 14px;
+    }
+    .callout{
+      border: 1px solid rgba(34,197,94,.35);
+      background: rgba(34,197,94,.10);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--text);
+      margin: 12px 0 10px;
+    }
+    .callout p{color: var(--muted)}
+    footer{
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    code{
+      font-family: var(--mono);
+      font-size: .95em;
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .toast{
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.65);
+      color: white;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .toast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+    @media print{
+      body{background:white}
+      header, .panel{box-shadow:none}
+      .actions, nav, .hint{display:none !important}
+      .panel{border:1px solid #ddd}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker">
+        <span class="badge">ADV</span>
+        <span>Advocate Network</span>
+      </div>
+      <h1>Terms of Service</h1>
+      <p class="sub">These Terms explain how the Advocate Network (ADV) Discord bot is intended to be used, what it logs, and how support and enforcement work.</p>
+      <div class="actions">
+        <button class="btn-primary" id="copyBtn" type="button" aria-label="Copy Terms to clipboard">
+          <span>📋</span><span>Copy Terms</span>
+        </button>
+        <a class="btn" href="#terms"><span>⬇️</span><span>Read Terms</span></a>
+        <button class="btn" id="printBtn" type="button"><span>🖨️</span><span>Print</span></button>
+      </div>
+      <div class="hint">Tip: You can link this page in your Discord verification flow.</div>
+    </header>
+
+    <main>
+      <div class="panel" id="terms">
+        <div class="meta">
+          <div><strong>Last Updated:</strong> January 2026</div>
+          <div><strong>Document:</strong> Advocate Network (ADV) — Terms of Service</div>
+        </div>
+
+        <nav aria-label="Terms navigation">
+          <a class="chip" href="#acceptance">1. Acceptance</a>
+          <a class="chip" href="#intended">2. Intended Use</a>
+          <a class="chip" href="#data">3. Data & Logs</a>
+          <a class="chip" href="#support">4. Support Sessions</a>
+          <a class="chip" href="#import">5. Import</a>
+          <a class="chip" href="#capacity">6. Capacity</a>
+          <a class="chip" href="#abuse">7. Abuse</a>
+          <a class="chip" href="#removal">8. Removal</a>
+          <a class="chip" href="#warranty">9. No Warranty</a>
+          <a class="chip" href="#changes">10. Changes</a>
+          <a class="chip" href="#contact">11. Contact</a>
+          <a class="chip" href="#summary">Summary</a>
+        </nav>
+
+        <div class="panel-inner">
+          <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By adding, enabling, or using <strong>Advocate Network</strong> (“ADV”, “the bot”) in any Discord server, you agree to these Terms of Service. If you do not agree, you should not use the bot.</p>
+          </section>
+
+          <section id="intended">
+            <h2>2. Intended Use</h2>
+            <p>ADV is provided for <strong>authorized community management, moderation, support, and infrastructure purposes</strong>.</p>
+            <p>Use of the bot outside of its intended scope may result in:</p>
+            <ul>
+              <li>Limited or no support</li>
+              <li>Feature restriction</li>
+              <li>Temporary or permanent disablement</li>
+              <li>Removal of the bot from the server</li>
+            </ul>
+            <p>ADV reserves the right to determine appropriate use.</p>
+          </section>
+
+          <section id="data">
+            <h2>3. Data Collection &amp; Logging</h2>
+            <p>ADV collects and processes <strong>only the minimum data required for functionality and stability</strong>, including but not limited to:</p>
+            <ul>
+              <li>Command usage metadata</li>
+              <li>Configuration data</li>
+              <li>Ticket and support session metadata</li>
+              <li>Error and diagnostic logs</li>
+              <li>Server and channel identifiers related to ADV features</li>
+            </ul>
+            <p>ADV <strong>does not</strong> monitor or log general message content outside of:</p>
+            <ul>
+              <li>Explicitly created ADV support channels</li>
+              <li>Ticket channels</li>
+              <li>Opt-in support relay sessions</li>
+            </ul>
+            <p>All support relay and import sessions are <strong>explicitly initiated by server administrators</strong>.</p>
+
+            <div class="callout">
+              <strong>Note on message relays:</strong>
+              <p>Only messages posted within designated ADV support channels are relayed and archived for support purposes.</p>
+            </div>
+          </section>
+
+          <section id="support">
+            <h2>4. Support Sessions &amp; Message Relays</h2>
+            <p>When a server administrator initiates an ADV support session:</p>
+            <ul>
+              <li>Only messages sent within designated support channels are relayed</li>
+              <li>Support sessions are opt-in and temporary</li>
+              <li>Messages may be archived for diagnostic or support purposes</li>
+              <li>Transcripts may be provided upon request</li>
+            </ul>
+            <p>ADV does <strong>not</strong> access other channels, private messages, or unrelated content.</p>
+          </section>
+
+          <section id="import">
+            <h2>5. Import &amp; Migration Features</h2>
+            <p>ADV may provide tools to assist with <strong>importing or adopting existing server structures</strong> (roles, categories, ticket channels).</p>
+            <p>Import features:</p>
+            <ul>
+              <li>Are fully opt-in</li>
+              <li>Do not modify or delete anything without confirmation</li>
+              <li>Provide receipts of what was detected, adopted, or left unchanged</li>
+              <li>Do not disable ADV features by default</li>
+            </ul>
+            <p>ADV will not silently take over or modify existing frameworks.</p>
+          </section>
+
+          <section id="capacity">
+            <h2>6. Feature Availability &amp; Capacity</h2>
+            <p>ADV is provided as a <strong>free service</strong> and operates within defined capacity limits to ensure stability.</p>
+            <p>ADV may:</p>
+            <ul>
+              <li>Limit onboarding of new servers</li>
+              <li>Temporarily restrict advanced features</li>
+              <li>Degrade non-essential functionality</li>
+            </ul>
+            <p>This is done to maintain service quality for existing users.</p>
+          </section>
+
+          <section id="abuse">
+            <h2>7. Abuse, Misuse &amp; Enforcement</h2>
+            <p>If ADV detects misuse, abuse, or behavior that threatens stability or compliance, ADV may:</p>
+            <ul>
+              <li>Issue warnings</li>
+              <li>Throttle or restrict features</li>
+              <li>Temporarily disable the bot in the server</li>
+              <li>Withdraw the service entirely</li>
+            </ul>
+            <p>ADV reserves the right to take these actions without prior notice when necessary.</p>
+          </section>
+
+          <section id="removal">
+            <h2>8. Server Removal &amp; Cleanup</h2>
+            <p>Upon removal of ADV from a server:</p>
+            <ul>
+              <li>ADV does <strong>not</strong> delete channels, roles, or resources by default</li>
+              <li>Cleanup occurs <strong>only upon explicit administrator request</strong></li>
+              <li>ADV-created resources may remain unless reset commands are used</li>
+            </ul>
+          </section>
+
+          <section id="warranty">
+            <h2>9. No Warranty</h2>
+            <p>ADV is provided <strong>“as is”</strong>, without warranties of any kind.</p>
+            <p>ADV makes no guarantees regarding availability, uptime, data retention, or feature permanence. Use of the bot is at your own risk.</p>
+          </section>
+
+          <section id="changes">
+            <h2>10. Changes to Terms</h2>
+            <p>These Terms may be updated at any time. Continued use of ADV after updates constitutes acceptance of the revised Terms.</p>
+          </section>
+
+          <section id="contact">
+            <h2>11. Contact &amp; Support</h2>
+            <p>For support, escalation, or questions regarding these Terms, contact <strong>ADV staff</strong> through official support channels or the designated ADV control server.</p>
+          </section>
+
+          <section id="summary" class="summary">
+            <h2>✅ Summary (plain language)</h2>
+            <ul>
+              <li>ADV only does what you explicitly enable</li>
+              <li>Logging is limited to bot functionality</li>
+              <li>Support and imports are opt-in</li>
+              <li>Abuse can result in restriction or removal</li>
+              <li>ADV is free and capacity-limited</li>
+              <li>Nothing is deleted without consent</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        <div>© <span id="year"></span> Advocate Network (ADV)</div>
+        <div class="muted">Printable • Mobile-friendly • Single-file HTML</div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard</div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const copyBtn = document.getElementById("copyBtn");
+    const toast = document.getElementById("toast");
+    const printBtn = document.getElementById("printBtn");
+
+    function showToast(text){
+      toast.textContent = text;
+      toast.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>toast.classList.remove("show"), 1400);
+    }
+
+    copyBtn.addEventListener("click", async () => {
+      try{
+        const termsText = document.getElementById("terms").innerText.trim();
+        await navigator.clipboard.writeText(termsText);
+        showToast("Copied Terms to clipboard");
+      }catch(e){
+        showToast("Copy failed — select and copy manually");
+      }
+    });
+
+    printBtn.addEventListener("click", () => window.print());
+  </script>
+</body>
+</html>
