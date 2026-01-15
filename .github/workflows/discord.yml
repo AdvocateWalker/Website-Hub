@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Discord message
-        uses: Ilshidur/action-discord@v2
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        with:
-          args: "🚀 Push to **${{ github.repository }}** by **${{ github.actor }}**"
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{
+            "content": "🚀 Push to **${{ github.repository }}** by **${{ github.actor }}**"
+          }' \
+          ${{ secrets.DISCORD_WEBHOOK }}
+
