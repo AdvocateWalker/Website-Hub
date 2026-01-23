@@ -1,18 +1,39 @@
-name: Discord Notify
+name: Repo activity to Discord
 
 on:
   push:
-    branches: [ main ]
+  pull_request:
+  issues:
+  release:
+  workflow_run:
+    workflows: ["*"]
+    types: [completed]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
       - name: Send Discord message
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          curl -H "Content-Type: application/json" \
-          -d '{
-            "content": "🚀 Push to **${{ github.repository }}** by **${{ github.actor }}**"
-          }' \
-          ${{ secrets.DISCORD_WEBHOOK }}
+          echo "Event: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "push" ]; then
+            commits=$(jq -r '.commits[] | "- " + .message' "$GITHUB_EVENT_PATH")
+            content="🚀 Push to **${{ github.repository }}** by **${{ github.actor }}**\n${commits}"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            content="🔁 PR **#${{ github.event.pull_request.number }}**: ${{ github.event.pull_request.title }} by **${{ github.actor }}**"
+          elif [ "${{ github.event_name }}" = "issues" ]; then
+            content="📝 Issue **#${{ github.event.issue.number }}**: ${{ github.event.issue.title }} by **${{ github.actor }}**"
+          elif [ "${{ github.event_name }}" = "release" ]; then
+            content="🏷️ Release **${{ github.event.release.tag_name }}** by **${{ github.actor }}**"
+          elif [ "${{ github.event_name }}" = "workflow_run" ]; then
+            content="✅ Workflow **${{ github.event.workflow_run.name }}** ${{
+              github.event.workflow_run.conclusion }} on **${{ github.repository }}**"
+          else
+            content="ℹ️ Event **${{ github.event_name }}** in **${{ github.repository }}** by **${{ github.actor }}**"
+          fi
 
+          curl -H "Content-Type: application/json" \
+            -d "$(jq -n --arg c "$content" '{content: $c}')" \
+            "$DISCORD_WEBHOOK"
