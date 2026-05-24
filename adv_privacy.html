@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>Advocate Network (ADV) — Privacy Policy</title>
-  <meta name="description" content="Advocate Network (ADV) Discord bot Privacy Policy." />
+  <title>Advocate Network (ADV) - Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for all Advocate Network (ADV) bots and automation services, including Discord and Reddit integrations." />
   <style>
     :root{
       --bg:#0b0f1a; --panel:rgba(255,255,255,.06); --panel-2:rgba(255,255,255,.04);
@@ -37,12 +37,13 @@
     .badge{font-family:var(--mono); font-size:12px; padding:6px 10px; border-radius:999px;
       border:1px solid var(--border); background:var(--panel-2); color:var(--muted)}
     h1{margin:10px 0 0; font-size:clamp(26px,3vw,40px)}
-    .sub{color:var(--muted); max-width:70ch}
+    .sub{color:var(--muted); max-width:75ch}
     main{margin-top:18px}
     .panel{border:1px solid var(--border); border-radius:var(--radius); background:var(--panel); box-shadow:var(--shadow)}
     .panel-inner{padding:18px}
     h2{margin-top:18px}
     p,li{color:var(--muted)}
+    code{font-family:var(--mono)}
     footer{margin-top:18px; color:var(--faint); font-size:13px}
   </style>
 </head>
@@ -51,70 +52,83 @@
     <header>
       <span class="badge">ADV</span>
       <h1>Privacy Policy</h1>
-      <p class="sub">This Privacy Policy explains how the Advocate Network (ADV) Discord bot handles data. ADV Core Bot is part of the Advocate Network and shares privacy and terms with the main ADV Discord Bot.</p>
+      <p class="sub">This Privacy Policy applies to all Advocate Network (ADV) services in this ecosystem, including ADV Discord bots, ADV Core Bot, and connected Reddit automation modules and moderation tools.</p>
     </header>
 
     <main>
       <div class="panel">
         <div class="panel-inner">
-          <p><strong>Last Updated:</strong> January 2026</p>
+          <p><strong>Last Updated:</strong> May 24, 2026</p>
 
-          <h2>1. Overview</h2>
-          <p>This policy explains how Advocate Network (“ADV”) collects, uses, and protects data.</p>
+          <h2>1. Scope</h2>
+          <p>This policy covers ADV services deployed across Discord and Reddit, including moderation automation, modmail tools, safety workflows, dashboards, and related scheduler or notification services.</p>
 
-          <h2>2. Data Collected</h2>
+          <h2>2. Data We Collect</h2>
           <ul>
-            <li>Server, channel, role, and user IDs</li>
-            <li>Command execution metadata</li>
-            <li>Ticket and support session metadata</li>
-            <li>Error and diagnostic logs</li>
+            <li>Platform identifiers (server, guild, subreddit, channel, thread, role, user, post, comment, conversation IDs)</li>
+            <li>Configuration and settings data (feature toggles, thresholds, policy overrides, authorized targets)</li>
+            <li>Operational metadata (job runs, command usage, module triggers, action outcomes)</li>
+            <li>Moderation context data needed for enabled features (mod log signals, modmail metadata, enforcement status)</li>
+            <li>Error, diagnostics, and anti-abuse telemetry</li>
           </ul>
 
-          <h2>3. Message Content</h2>
-          <p>ADV does not read general chat. Messages are processed only in ticket channels, ADV support channels, or explicit support relay sessions.</p>
+          <h2>3. Message and Content Handling</h2>
+          <p>ADV processes content only when required by enabled features. Examples include modmail processing, configured support channels, safety review pipelines, and explicit moderator workflows.</p>
+          <p>ADV does not use your data for advertising and does not sell personal data.</p>
 
-          <h2>4. Import & Migration</h2>
-          <p>Import tools are opt-in, auditable, and do not modify anything without confirmation.</p>
+          <h2>4. How Data Is Used</h2>
+          <ul>
+            <li>Operate requested bot features and moderation workflows</li>
+            <li>Provide safety controls, triage context, and policy enforcement routing</li>
+            <li>Maintain reliability, detect abuse, and troubleshoot failures</li>
+            <li>Generate audit trails for moderator-visible bot actions</li>
+          </ul>
 
-          <h2>5. Logging & Diagnostics</h2>
-          <p>Logs are maintained solely for stability, abuse prevention, and troubleshooting.</p>
+          <h2>5. Cross-Platform and Cross-Community Context</h2>
+          <p>Some features may correlate signals across authorized communities or systems (for example, Reddit moderation context and Discord operator workflows). These features are intended for moderation use and should be configured by authorized admins/moderators only.</p>
 
-          <h2>6. Storage & Security</h2>
-          <p>Data is stored securely on ADV-controlled infrastructure and never sold or shared.</p>
+          <h2>6. Legal Basis and Permissions</h2>
+          <p>You are responsible for enabling ADV only where you have authority to do so. By using ADV, server owners and moderators represent they are authorized to process moderation-relevant data under applicable platform rules and local law.</p>
 
-          <h2>7. Data Sharing</h2>
-          <p>ADV only shares data when required by law or to protect infrastructure and users.</p>
+          <h2>7. Data Retention</h2>
+          <p>Data is retained only as long as needed for operations, safety, abuse prevention, and auditability. Retention duration may vary by feature and incident response needs.</p>
 
-          <h2>8. Retention & Deletion</h2>
-          <p>Data is retained only as long as necessary for operational and security purposes.</p>
+          <h2>8. Data Sharing</h2>
+          <p>ADV may share data only when required by law, platform policy compliance, security response, or to protect users and infrastructure. ADV does not broker or sell user data.</p>
 
-          <h2>9. Administrator Rights</h2>
-          <p>Admins may remove the bot, request transcripts, or reset ADV-created resources.</p>
+          <h2>9. Security</h2>
+          <p>ADV uses reasonable technical and organizational controls to protect stored data. No system is guaranteed to be perfectly secure, but access is limited to operational need.</p>
 
-          <h2>10. Abuse & Enforcement</h2>
-          <p>Additional diagnostics may be collected during abuse investigations.</p>
+          <h2>10. Admin and Moderator Controls</h2>
+          <ul>
+            <li>Enable or disable features at the community level</li>
+            <li>Adjust policy settings and automation scope</li>
+            <li>Remove ADV services from a community</li>
+            <li>Request operational support through official ADV channels</li>
+          </ul>
 
-          <h2>11. Children’s Privacy</h2>
-          <p>ADV is not intended for use by minors under Discord’s Terms of Service.</p>
+          <h2>11. Children and Age Requirements</h2>
+          <p>ADV is not intended for anyone who is not permitted to use the underlying platforms (Discord/Reddit) under their Terms and age requirements.</p>
 
-          <h2>12. Policy Changes</h2>
-          <p>This policy may change; continued use implies acceptance.</p>
+          <h2>12. Policy Updates</h2>
+          <p>We may update this policy over time. Continued use of ADV services after updates means you accept the revised policy.</p>
 
           <h2>13. Contact</h2>
-          <p>Contact ADV staff through official support channels for privacy questions.</p>
+          <p>For privacy or data handling questions, contact ADV through official support channels listed by the project/community.</p>
 
           <h2>Summary</h2>
           <ul>
-            <li>Minimal data collection</li>
-            <li>Opt-in support and imports</li>
-            <li>No data selling</li>
-            <li>Admins stay in control</li>
+            <li>One policy for all ADV bots and automation services</li>
+            <li>Data use is limited to operations, moderation, and security</li>
+            <li>No sale of user data</li>
+            <li>Admins and moderators control feature scope</li>
           </ul>
         </div>
       </div>
     </main>
 
-    <footer>© Advocate Network (ADV)</footer>
+    <footer>&copy; <span id="year"></span> Advocate Network (ADV)</footer>
   </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
