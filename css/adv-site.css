@@ -76,6 +76,104 @@ th { color: #cfe0ff; background: #12203a; }
   color: var(--muted); font-size: .95rem;
 }
 .notice { border-left: 3px solid var(--brand-2); padding: .7rem .9rem; background: #122134; border-radius: 8px; color: var(--muted); }
+.tag-row { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
+.tag {
+  display: inline-flex; align-items: center; gap: .3rem;
+  padding: .2rem .55rem; border-radius: 999px;
+  border: 1px solid #365588; background: #12233f; color: #c7ddff;
+  font-size: .76rem; font-weight: 600; letter-spacing: .01em;
+}
+.status {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: #b9d8ff; font-size: .84rem; font-weight: 600;
+}
+.status::before {
+  content: "";
+  width: .5rem; height: .5rem; border-radius: 50%;
+  background: #4ce7a7;
+  box-shadow: 0 0 0 5px #4ce7a725;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.app-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: linear-gradient(170deg, #101a2d, #0c1322);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.app-card::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto auto -20%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #4da3ff1e 0%, transparent 70%);
+  pointer-events: none;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  border-color: #3e5c92;
+  box-shadow: 0 16px 24px #03081255;
+}
+.app-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .6rem;
+  margin-bottom: .4rem;
+}
+.app-name {
+  margin: 0;
+  font-size: 1.02rem;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.45rem;
+  padding: .1rem .5rem;
+  border-radius: 999px;
+  border: 1px solid #355a8f;
+  background: #10223f;
+  color: #c2dbff;
+  font-size: .72rem;
+  font-weight: 700;
+}
+.pill.discord { border-color: #5f74c7; background: #1d2f58; color: #d4dcff; }
+.pill.reddit { border-color: #b2663d; background: #3f261a; color: #ffd5be; }
+.pill.web { border-color: #32836a; background: #123a31; color: #c8f7ea; }
+.section-lead {
+  margin: 0 0 .9rem;
+  color: var(--muted);
+  max-width: 75ch;
+}
+.discord-banner {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #344f83;
+  border-radius: 14px;
+  padding: 1.1rem;
+  background:
+    linear-gradient(120deg, #1a2750cc, #122847cc),
+    radial-gradient(320px 120px at 10% 0%, #5a8aff42, transparent 70%);
+}
+.discord-banner h3 { margin-top: 0; margin-bottom: .45rem; }
+.discord-banner p { margin: 0; color: #d4e0f6; }
+.discord-banner .actions { margin-top: .95rem; }
+.discord-banner .btn.primary {
+  background: linear-gradient(145deg, #6277e8, #66afe8);
+  color: #081228;
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-card { transition: none; }
+  .app-card:hover { transform: none; }
+}
 @media (max-width: 900px) {
   .grid.cols-3 { grid-template-columns: 1fr; }
   .grid.cols-2 { grid-template-columns: 1fr; }
